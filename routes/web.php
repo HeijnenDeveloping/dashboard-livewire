@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,4 @@ Route::middleware([
 
 
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
+Route::get('roles', [RoleController::class, 'index'])->name('roles.index');
