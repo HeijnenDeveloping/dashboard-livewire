@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body class="font-sans antialiased dark">
-        <x-banner />
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @livewire('navigation-menu')
+    <!-- Styles -->
+    @livewireStyles
+</head>
 
+<body class="font-sans antialiased dark">
+
+
+    <div class="min-h-screen bg-gray-900">
+        @livewire('navigation-menu')
+
+        <div class="flex">
             <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+            @livewire('sidebar')
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            <main class="flex-1 ">
+                <section class="px-5 mx-auto min-h-screen inset-x-24">
+                    {{ $slot }}
+                </section>
+
+
+                <footer class="footer footer-center w-full p-4 mt-10 bg-slate-800 text-white">
+                    <div class="flex justify-between">
+                        <p>
+                            Copyright © 2023 -
+                            <a class="font-semibold" href="mailto:danny@heijnen-developing.nl">Danny Heijnen</a>
+                        </p>
+                        <p>
+                            Design & Developed by
+                            <a class="font-semibold" href="mailto:danny@heijnen-developing.nl">Heijnen Developing</a>
+                        </p>
+                    </div>
+                </footer>
             </main>
         </div>
+    </div>
 
-        @stack('modals')
+            @stack('modals')
 
         @livewireScripts
-    </body>
+</body>
+
 </html>

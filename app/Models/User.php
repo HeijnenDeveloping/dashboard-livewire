@@ -54,4 +54,16 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function scopeSearch($query, $val)
+    {
+        return $query->where('name', 'like', '%' . $val . '%')
+            ->orWhere('fname', 'like', '%' . $val . '%')
+            ->orWhere('email', 'like', '%' . $val . '%');
+    }
+
+    public function clock_ins()
+    {
+        return $this->hasMany(ClockIn::class);
+    }
 }

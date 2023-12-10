@@ -30,4 +30,4 @@ Route::middleware([
 });
 
 
-Route::resource('/taken', TaskController::class);
+Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');

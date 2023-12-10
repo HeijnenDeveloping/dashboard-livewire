@@ -17,7 +17,7 @@
                     </x-nav-link>
                 </div>
                       <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('taken.index') }}" :active="request()->routeIs('taken')">
+                    <x-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.index')">
                         {{ __('Taken') }}
                     </x-nav-link>
                 </div>
