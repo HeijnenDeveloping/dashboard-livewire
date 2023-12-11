@@ -20,6 +20,20 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
     use HasRoles;
 
+    const ROLE_SUPER_ADMIN = 'SUPER_ADMIN';
+    const ROLE_ADMIN = 'ADMIN';
+    const ROLE_EMPLOYEE = 'EMPLOYEE';
+    const ROLE_USER = 'USER';
+
+    const ROLES = [
+        self::ROLE_SUPER_ADMIN => 'Super Admin',
+        self::ROLE_ADMIN => 'Admin',
+        self::ROLE_EMPLOYEE => 'Employee',
+        self::ROLE_USER => 'User',
+    ];
+
+
+
     /**
      * The attributes that are mass assignable.
      *

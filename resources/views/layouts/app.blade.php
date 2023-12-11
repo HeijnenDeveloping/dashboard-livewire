@@ -27,7 +27,9 @@
 
         <div class="flex">
             <!-- Page Heading -->
-            @livewire('sidebar')
+            <div class="hidden lg:block">
+                @livewire('sidebar')
+            </div>
 
             <!-- Page Content -->
             <main class="flex-1 ">
@@ -36,8 +38,8 @@
                 </section>
 
 
-                <footer class="footer footer-center w-full p-4 mt-10 bg-slate-800 text-white">
-                    <div class="flex justify-between">
+                <footer class="footer footer-center w-full p-4 mt-10 bg-slate-900 dark:text-gray-300">
+                    <div class="flex flex-col items-center xl:flex-row xl:justify-between">
                         <p>
                             Copyright © 2023 -
                             <a class="font-semibold" href="mailto:danny@heijnen-developing.nl">Danny Heijnen</a>

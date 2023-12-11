@@ -32,4 +32,3 @@ Route::middleware([
 
 
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
-Route::get('roles', [RoleController::class, 'index'])->name('roles.index');

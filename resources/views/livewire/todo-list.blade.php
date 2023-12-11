@@ -12,7 +12,7 @@
 
     <div class="grid grid-cols-12 mx-10">
         @foreach ($todos as $todo)
-            <div class="col-span-3 mx-3 my-10">
+            <div class="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4 mx-3 my-10">
                 <div class="rounded-xl bg-zinc-400 shadow shadow-white px-4 py-6">
                     @if ($todo->status === 'afgerond')
                         <div class="flex justify-end">
